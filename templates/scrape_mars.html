@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <title>Information about Mars</title>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+
+    <div class="row" id="mars_data">
+      <div class="col-md-12">
+        <h3 class="heading">Latest Mars News</h3>
+        <h6 class="heading">{{marsData.news_title}}</h6>
+        <small>{{marsData.news_p}}</small>
+        <br>
+        <br>
+      </div>
+    </div>
+
+    <!-- Pictures, table, and facts -->
+    <div class="row">
+      <div class="col-md-8">
+        <h3 class="heading">Featured Mars Image</h3>
+        <img src="{{marsData.featured_image_url}}" class="img-fluid" alt="Featured Mars Image">
+      </div>
+      <div class="col-md-4">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <h6 class="heading">Current Weather on Mars</h6>
+            <small>{{marsData.mars_weather}}</small>
+          </li>
+          <br>
+          <h6 class="heading">Mars Facts</h6>
+          <small>{{marsData.marsFact | safe}}</small>
+        </ul>
+        <br>
+        <br>
+      </div>
+    </div>
+    <br>
+
+    <!-- Mars Hemisphere -->
+    <h3 class="heading text-center">Mars Hemispheres</h3>
+    <br>
+    <div class="row">
+      <div class="card-deck">
+        <div class="card">
+          <img src="{{marsData.mars_hemis[0]["img_url"]}}" class="card-img-top" alt="img 0">
+          <div class="card-body">
+            <h5 class="card-title">{{marsData.mars_hemis[0]["title"]}}</h5>
+          </div>
+        </div>
+        <div class="card">
+          <img src="{{marsData.mars_hemis[1]["img_url"]}}" class="card-img-top" alt="img 1">
+          <div class="card-body">
+            <h5 class="card-title">{{marsData.mars_hemis[1]["title"]}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+   
+
+    <div class="row">
+      <div class="card-deck">
+        <div class="card">
+          <img src="{{marsData.mars_hemis[2]["img_url"]}}" class="card-img-top" alt="img 0">
+          <div class="card-body">
+            <h5 class="card-title">{{marsData.mars_hemis[2]["title"]}}</h5>
+          </div>
+        </div>
+        <div class="card">
+          <img src="{{marsData.mars_hemis[3]["img_url"]}}" class="card-img-top" alt="img 1">
+          <div class="card-body">
+            <h5 class="card-title">{{marsData.mars_hemis[3]["title"]}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>
